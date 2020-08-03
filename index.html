@@ -286,44 +286,31 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-10 col-md-offset-2">
-                        <form id="myForm" class="form-inline">
-                            <div class="col-lg-2">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="userName" placeholder="Name"
-                                        name="userName">
+                        <form method="post" enctype="multipart/form-data" action="/mail.php">
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="userName" placeholder="Name" required name="userName">
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="userEmail" placeholder="Email" required name="userEmail">
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <input type="Phone" class="form-control" id="PhoneNumber" placeholder="Phone" required name="userPhone">
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <input type="file" class="form-control" id="userResume" placeholder="Upload Resume" required name="userResume">
                                 </div>
                             </div>
-                            <div class="col-lg-2">
-                                <div class="form-group">
-                                    <input type="email" class="form-control" id="userEmail" placeholder="Email"
-                                        name="userEmail">
-                                </div>
-                            </div>
-                            <div class="col-lg-2">
-                                <div class="form-group">
-                                    <input type="number" class="form-control" id="PhoneNumber" placeholder="Phone"
-                                        name="userPhone">
-                                </div>
-                            </div>
-                            <div class="col-lg-2">
-                                <div class="form-group">
-                                    <input type="file" class="form-control" id="userResume"
-                                        placeholder="Upload Resume" name="userResume">
-
-                                    <!-- <p>
-                                    <input type="file" id="file" multiple placeholder="Upload Your Resume" onchange="GetFileSizeNameAndType()" />
-                                </p>
-
-                                <div id="fp"></div>
-                                <p>
-                                    <div id="divTotalSize"></div>
-                                </p> -->
-
-                                </div>
-                            </div>
-                            <div class="col-lg-2">
-                                <button type="submit" class="btn btn-default">Submit</button>
-                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <button type="submit" class="btn btn-default">Submit</button>
+                        </div>
                         </form>
                     </div>
                 </div>
