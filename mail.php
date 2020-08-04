@@ -3,7 +3,8 @@
     // ini_set('display_startup_errors', 1);
     // error_reporting(E_ALL);
 
-    //print_r($_REQUEST); exit;
+
+
 
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
@@ -21,22 +22,23 @@ $mail = new PHPMailer(true);
 
 try {
     //Server settings
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
+    $mail->SMTPDebug = 0;                      // Enable verbose debug output
     $mail->isSMTP();                                            // Send using SMTP
     $mail->Host       = 'smtp.sendgrid.net';                    // Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-    $mail->Username   = 'n.nitish131@gmail.com';                     // SMTP username
-    $mail->Password   = 'Nitish@7784';                               // SMTP password
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
-    $mail->Port       = 465;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+    $mail->Username   = 'TradingGyan';                     // SMTP username
+    $mail->Password   = 'bigcow@123';                               // SMTP password
+    $mail->SMTPSecure = 'tls';         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+    $mail->Port       = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
     //Recipients
-    $mail->setFrom('no-reply@trapatecnoziant.com');
-    $mail->addAddress('paurushankit5@gmail.com.net');     // Add a recipient
-    $mail->addReplyTo('no-reply@trapatecnoziant.com');
+    $mail->setFrom('info@tradinggyan.com');
+    $mail->addAddress('paurush.ankit@gmail.com');     // Add a recipient
+    $mail->addAddress('paurushankit5@gmail.com');     // Add a recipient
+    //$mail->addReplyTo('info@it-expert.co.in');
 
     // Attachments
-    $mail->addAttachment($_FILES['userResume']['tmp_name']);         // Add attachments
+    //$mail->addAttachment($_FILES['userResume']['tmp_name']);         // Add attachments
 
     // Content
     $mail->isHTML(true);                                  // Set email format to HTML
@@ -48,7 +50,7 @@ try {
                     </ul>";
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
-    // $mail->send();
+    $mail->send();
     header('Location: index.html?success=true');
 
     // echo 'Message has been sent';
