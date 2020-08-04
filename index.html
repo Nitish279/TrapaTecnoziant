@@ -264,7 +264,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-11">
-                        <form method="post" enctype="multipart/form-data" name="resumeform" action="/mail.php">
+                        <form method="post" name="resumeForm" enctype="multipart/form-data" name="resumeform" action="/mail.php">
                         <div class="col-lg-3">
                             <div class="form-group">
                                 <input type="text" class="form-control" id="userName" placeholder="Name" required name="userName">
@@ -353,11 +353,45 @@
     <script type="text/javascript" src="scripts/js/index.js"></script>
     <script type="text/javascript">
         $(function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const success = urlParams.get('success');
-            if(success == 'true'){
-                $("#myModal").modal()
-            }       
+            // const urlParams = new URLSearchParams(window.location.search);
+            // const success = urlParams.get('success');
+            // if(success == 'true'){
+            //     $("#myModal").modal()
+            // }  
+            
+
+
+            $("form[name='resumeForm']").validate({
+                // Specify validation rules
+                rules: {
+                    userName: "required",
+                    userEmail: {
+                        required: true,
+                        email: true
+                    },
+                    userPhone: {
+                        required: true,
+                        minlength: 10
+                    },
+                    userResume: {
+                        required: true,
+                        //extension: "mp3|mpeg|mp4"
+                    },
+                },
+                messages: {
+                    userName: "Please enter your name",
+                    userResume: "Please add your resume",
+                    userPhone: {
+                        required: "Please provide a number ",
+                        minlength: "Provide a valid number"
+                    }
+                },
+                submitHandler: function(form) {
+                    $("#myModal").modal()
+
+                    //form.submit();
+                }
+            });
         });
     </script>
 </body>
