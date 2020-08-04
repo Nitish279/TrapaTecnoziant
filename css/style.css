@@ -8870,36 +8870,10 @@
     z-index: -1;
 }
 
-/* .custome_input{
-    position: relative;
-}
-
-.inputfile::-webkit-file-upload-button {
-    visibility: hidden;
-  } */
-
-/* .custom-file-input::-webkit-file-upload-button {
-    visibility: hidden;
-  }
-  .custom-file-input::before {
-    content: ' ';
-    display: inline-block;
-    background: linear-gradient(top, #f9f9f9, #e3e3e3);
-    width: 100%;
-    outline: none;
-    white-space: nowrap;
-    -webkit-user-select: none;
+.scroll_to_top{
+    display: none;
+    position: fixed;
+    bottom: 1em;
+    right: 1.5em;
     cursor: pointer;
-    font-size: 10pt;
-    text-align: center;
-    background-color: white;
-    height: 34px;
-    line-height: 34px;
-    color: #999999;
 }
-  .custom-file-input:hover::before {
-    border-color: black;
-  }
-  .custom-file-input:active::before {
-    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
-  } */
